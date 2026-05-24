@@ -33,8 +33,11 @@ The Non-Negative Matrix Factorization (NMF) pipeline used to discover macro-them
   * **Purpose:** Prepares and exports the massive SQLite tables into heavily optimized CSV formats for the NMF algorithm to ingest using multiprocessing (15 CPU cores).
 
 ## 4. Factual Claim Extraction (Claimify)
-The custom Large Language Model (LLM) pipeline designed to extract verifiable statements from dense political rhetoric.
+The custom Large Language Model (LLM) pipeline designed to extract verifiable statements from dense political rhetoric. This methodology is heavily inspired by the [Microsoft Claimify framework available on Hugging Face](https://huggingface.co/datasets/microsoft/claimify-dataset).
 
-* **`run_claimify_transcripts_api.py`**
-  * **Purpose:** Deploys the Google Gemini 2.5 Flash model as an automated research assistant to structure the discourse.
+* **`run_claimify_transcripts_api.py`** (For Host Discourse)
+  * **Purpose:** Deploys the Google Gemini 2.5 Flash model as an automated research assistant to structure the discourse from the video transcripts.
   * **Functionality:** Uses advanced Prompt Engineering to force the LLM to read 24,000-character transcripts and output a strictly formatted JSON array of "Factual Claims." It isolates concrete, verifiable statements (e.g., policy critiques, statistical claims) while discarding hyperbole, opinions, and casual banter.
+* **`run_claimify_api.py`** (For Audience Discourse)
+  * **Purpose:** Applies the identical Claimify extraction logic to the audience comment section.
+  * **Functionality:** Identifies concrete factual claims being made by the viewers, allowing for a direct comparison of the factual vs. emotional density between the host's statements and the audience's reactions.
