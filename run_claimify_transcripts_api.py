@@ -7,7 +7,7 @@ import sys
 import re
 
 def main():
-    API_KEY = "AIzaSyANiYYwHjjea0qBniOH6sIeclT_O0usKeg"
+    API_KEY = *hidden for privacy*
     genai.configure(api_key=API_KEY)
 
     model = genai.GenerativeModel(
