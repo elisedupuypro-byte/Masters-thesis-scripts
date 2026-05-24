@@ -6,7 +6,7 @@ from tqdm import tqdm
 import sys
 
 def main():
-    API_KEY = "AIzaSyANiYYwHjjea0qBniOH6sIeclT_O0usKeg"
+    API_KEY = *hidden for privacy*
     genai.configure(api_key=API_KEY)
 
     # Use the latest model
